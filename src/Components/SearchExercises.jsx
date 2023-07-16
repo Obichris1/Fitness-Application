@@ -41,7 +41,7 @@ if (search){
 }
 
   return (
-    <Stack  mt="40px" justifyContent="center" alignItems="center">
+    <Stack  mt="40px" justifyContent="center" alignItems="center" sx={{textAlign : {lg : 'left' , xs : 'center'}}}>
       <Typography mb="40px" textAlign="center" fontWeight = "600" sx = {{fontSize:{lg:'44px', xs:'30px'}}}>
         Awsome Exercises You <br /> Should Know
       </Typography>

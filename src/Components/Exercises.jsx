@@ -10,11 +10,11 @@ const [currentPage, setCurrentPage] = useState(1);
 const exercisesPerPage = 9
 
 const indexOfLastExercise = currentPage * exercisesPerPage
-console.log(indexOfLastExercise);
+// console.log(indexOfLastExercise);
 const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage
-console.log(indexOfFirstExercise);
+// console.log(indexOfFirstExercise);
 const currentExercises =  exercises.slice(indexOfFirstExercise,indexOfLastExercise)
-console.log(currentExercises);
+// console.log(currentExercises);
 
 const paginate = (e,value) => {
 
@@ -28,7 +28,7 @@ useEffect(() => {
 
     if(bodyPart === 'all'){
       exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions)
-      console.log(exercisesData);
+      // console.log(exercisesData);
    } else{
       exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions)
    }
@@ -49,15 +49,15 @@ useEffect(() => {
       mt="50px"
       p="20px"
       >
-        <Typography variant='h3' mb="45px">
-          Showing Results
+        <Typography variant='h3' mb="45px" sx={{textAlign :{ lg : 'left', xs:'center'}}}>
+          Exercises
         </Typography>
 
         <Stack direction = "row" sx={{gap:{lg:'110px',xs:'50px'}}} flexWrap="wrap" justifyContent="center"> 
              {currentExercises.map((exercise,index) => 
 
               <ExerciseCard key ={index} exercise={exercise}/> 
-
+ 
              )}
         </Stack>
 
